@@ -2,7 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 def get_last():
-    if(number < 0):
+    if(number < 0 and number % 10 != 0):
         return number % 10 - 10
     return number % 10
 def comval():
