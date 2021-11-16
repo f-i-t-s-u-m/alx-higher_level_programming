@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for asc in range(ord('a'), ord('z') + 1):
-    print(chr(asc), end='')
+for c in range(ord('a'), ord('z') + 1):
+    print("{:c}".format(c), end='')
