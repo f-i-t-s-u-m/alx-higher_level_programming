@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-for n in range(0, 100):
-    if n == 99:
-        print(n)
-    elif(str(n)[::-1] >= str(n)):
-        print("{:0>2}".format(n), end=', ')
+for y in range(0, 10):
+    for x in range(0, 10):
+        if int('%d%d' % (y,x)) == 99:
+            print(int('%d%d' % (y,x)))
+        elif int('%d%d' % (x,y)) >= int('%d%d' % (y,x)):
+            print("{:0>2}".format(int('%d%d' % (y,x))), end=', ')
