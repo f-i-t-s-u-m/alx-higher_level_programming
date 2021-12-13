@@ -42,7 +42,7 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
-    
+
     def __str__(self):
         rstr = ""
         if 0 in [self.__width, self.__height]:
@@ -50,6 +50,6 @@ class Rectangle:
         for n in range(self.__height):
             for _ in range(self.__width):
                 rstr += "#"
-            if n != self.__height - 1: 
+            if n != self.__height - 1:
                 rstr += "\n"
         return rstr
