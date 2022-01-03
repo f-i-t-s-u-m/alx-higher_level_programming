@@ -7,16 +7,8 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        Base.__nb_objects += 1
-        self.id = id
-
-    @property
-    def id(self):
-        return self.__id
-
-    @id.setter
-    def id(self, value):
-        if value is not None:
-            self.__id = value
+        if id:
+            self.id = id
         else:
-            self.__id = self.__nb_objects
+            Base.__nb_objects +=1
+            self.id = Base.__nb_objects
