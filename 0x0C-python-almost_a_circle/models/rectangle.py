@@ -64,8 +64,24 @@ class Rectangle(Base):
     def area(self):
         return self.__width * self.__height
 
+    def update(self, *args):
+        super().__init__(args[0])
+        for i, val in enumerate(args[1:]):
+            if i == 0:
+                self.width = val
+            elif i == 1:
+                self.height = val
+            elif i == 2:
+                self.x = val
+            elif i == 3:
+                self.y = val
+
     def display(self):
+        for _ in range(self.y):
+            print(" ")
         for _ in range(self.__height):
+            for _ in range(self.x):
+                print(" ", end="")
             for _ in range(self.__width):
                 print("#", end="")
             print()
