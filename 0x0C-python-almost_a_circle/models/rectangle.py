@@ -91,13 +91,13 @@ class Rectangle(Base):
 
     def display(self):
         """ display area"""
-        for _ in range(self.y):
-            print(" ")
+        for _ in range(self.__y):
+            print()
         for _ in range(self.__height):
-            for _ in range(self.x):
-                print(" ", end="")
+            for _ in range(self.__x):
+                print(end=" ")
             for _ in range(self.__width):
-                print("#", end="")
+                print("#",end="")
             print()
 
     def __str__(self):
