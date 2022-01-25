@@ -76,18 +76,23 @@ class Rectangle(Base):
         """return area"""
         return self.__width * self.__height
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ update area"""
-        super().__init__(args[0])
-        for i, val in enumerate(args[1:]):
-            if i == 0:
-                self.width = val
-            elif i == 1:
-                self.height = val
-            elif i == 2:
-                self.x = val
-            elif i == 3:
-                self.y = val
+        
+        if len(args) == 0:
+            for k, v in kwargs.items():
+                exec(f"self.{k} = {v}")
+        else:
+            super().__init__(args[0])
+            for i, val in enumerate(args[1:]):
+                if i == 0:
+                    self.width = val
+                elif i == 1:
+                    self.height = val
+                elif i == 2:
+                    self.x = val
+                elif i == 3:
+                    self.y = val
 
     def display(self):
         """ display area"""
