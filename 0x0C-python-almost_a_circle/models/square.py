@@ -29,7 +29,7 @@ class Square(Rectangle):
             for k, v in kwargs.items():
                 exec(f"self.{k} = {v}")
         else:
-            super().__init__(args[0])
+            self.id = args[0]
             for i, val in enumerate(args[1:]):
                 if i == 0:
                     self.size = val
