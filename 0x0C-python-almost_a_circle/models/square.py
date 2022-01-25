@@ -22,6 +22,22 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """ update area"""
+
+        if len(args) == 0:
+            for k, v in kwargs.items():
+                exec(f"self.{k} = {v}")
+        else:
+            super().__init__(args[0])
+            for i, val in enumerate(args[1:]):
+                if i == 0:
+                    self.size = val
+                elif i == 1:
+                    self.x = val
+                elif i == 2:
+                    self.y = val
+
     def __str__(self):
         """ return square string """
         return str("[Square] ({}) {}/{} - {}".format(
