@@ -78,7 +78,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ update area"""
-        
+
         if len(args) == 0:
             for k, v in kwargs.items():
                 exec(f"self.{k} = {v}")

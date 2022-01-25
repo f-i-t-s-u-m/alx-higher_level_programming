@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ python square file """
 
-
 from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """square class """
