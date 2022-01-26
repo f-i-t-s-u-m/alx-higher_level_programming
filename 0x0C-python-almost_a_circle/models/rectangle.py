@@ -94,6 +94,10 @@ class Rectangle(Base):
                 elif i == 3:
                     self.y = val
 
+    def to_dictionary(self):
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
+
     def display(self):
         """ display area"""
         for _ in range(self.__y):
