@@ -29,4 +29,4 @@ class Base:
         for objs in list_objs:
             newlist.append(objs.to_dictionary())
         with open(cls.__name__+'.json', "w") as jsfile:
-            json.dump(cls.to_json_string(newlist), jsfile)
+            json.dump(json.loads(cls.to_json_string(newlist)), jsfile)
