@@ -18,6 +18,6 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """static method to json string"""
-        if list_dictionaries in [[], None]:
+        if list_dictionaries is None or list_dictionaries is []:
             return []
         return json.dumps(list_dictionaries)
