@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 ''' almost circule '''
 
+import json
+
 
 class Base:
     ''' class of base '''
@@ -12,3 +14,10 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """static method to json string"""
+        if list_dictionaries is None:
+            return []
+        return json.dumps(list_dictionaries)
