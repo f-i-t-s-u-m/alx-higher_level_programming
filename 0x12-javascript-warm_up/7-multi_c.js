@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const argv = process.argv.slice(2);
 if (argv[0] === undefined) console.log('Missing number of occurrences');
-else if (argv[0] < 0) console.log();
+else if (argv[0] <= 0);
 else {
   let n = argv[0];
   while (n) {
