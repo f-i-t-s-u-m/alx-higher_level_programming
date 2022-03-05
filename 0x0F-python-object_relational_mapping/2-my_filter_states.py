@@ -3,9 +3,10 @@
 if '__main__' == __name__:
     import MySQLdb
     from sys import argv
-    db = MySQLdb.connect(user = argv[1], password=argv[2], database=argv[3])
+    db = MySQLdb.connect(user=argv[1], password=argv[2], database=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}'  ORDER BY states.id ASC".format(argv[4]))
+    q = "SELECT * FROM states WHERE name = '{}'  ORDER BY states.id ASC"
+    cur.execute(q.format(argv[4]))
     rows = cur.fetchall()
     for data in rows:
         print(data)
