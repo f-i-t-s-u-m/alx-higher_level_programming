@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+filter states by user inputs
+"""
+
 
 if '__main__' == __name__:
     import MySQLdb

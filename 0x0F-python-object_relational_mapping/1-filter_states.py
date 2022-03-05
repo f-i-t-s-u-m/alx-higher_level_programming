@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+select states
+"""
+
 
 if '__main__' == __name__:
     import MySQLdb
