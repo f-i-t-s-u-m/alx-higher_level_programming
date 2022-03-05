@@ -9,5 +9,5 @@ if __name__ == '__main__':
         argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    for i in session.query(State):
+    for i in session.query(State).order_by(State.id):
         print("{}: {}".format(i.id, i.name))
