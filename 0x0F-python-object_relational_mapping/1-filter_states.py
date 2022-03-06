@@ -13,4 +13,5 @@ if '__main__' == __name__:
     cur.execute(q)
     rows = cur.fetchall()
     for data in rows:
-        print(data)
+        if data[1].startswith('N'):
+            print(data)
