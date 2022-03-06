@@ -13,4 +13,5 @@ if '__main__' == __name__:
                 .format(argv[4]))
     rows = cur.fetchall()
     for data in rows:
-        print(data)
+        if data[1] == argv[4]:
+            print(data)
