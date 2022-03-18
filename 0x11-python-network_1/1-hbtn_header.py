@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+""" get header x-request-id """
+
+
 from urllib import request
 from sys import argv
-""" get x data """
 
 if __name__ == '__main__':
     with request.urlopen(argv[1]) as resp:
