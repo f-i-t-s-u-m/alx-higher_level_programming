@@ -1,14 +1,23 @@
 #!/usr/bin/python3
-""" ERror code """
+""" search api """
 
 
 import requests
 from sys import argv
 
-if __name__ == '__main__':
 
-    req = requests.get('http://0.0.0.0:5000/search_user', {'q': argv[1]})
-    if req.text == {}:
-        print('No result')
+def main(query= ""):
+    params = {'q': query}
+    req = requests.post('http://httpbin.org/anythin/search_user', params)
+    if req.text is not None:
+        print('[{}] {}'.format(req.text.id, req.text.name))
     else:
-        print('[{}] {}'.format(req.text.get('id'), req.text.get('name')))
+        print('No result')
+
+
+if __name__ == '__main__':
+    if len(argv) > 1:
+        main(argv[1])
+    else:
+        main()
+
