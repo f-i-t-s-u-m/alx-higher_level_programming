@@ -11,7 +11,7 @@ def main(query= ""):
     req = requests.post('http://0.0.0.0:5000/search_user', params=q)
     try:
         if req.json() is not None:
-            print('[{}] {}'.format(req().get('id'), req().get('name')))
+            print('[{}] {}'.format(req.json().get('id'), req.json().get('name')))
         else:
             print('No result')
     except ValueError:
