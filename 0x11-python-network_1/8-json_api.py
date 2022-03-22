@@ -8,7 +8,7 @@ from sys import argv
 
 def main(query= ""):
     params = {'q': query}
-    req = requests.post('http://httpbin.org/anythin/search_user', params)
+    req = requests.post('http://0.0.0.0:5000/search_user', params)
     try:
         if req.json() is not None:
             print('[{}] {}'.format(req().get('id'), req().get('name')))
