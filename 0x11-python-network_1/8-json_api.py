@@ -7,8 +7,8 @@ from sys import argv
 
 
 def main(query= ""):
-    params = {'q': query}
-    req = requests.post('http://0.0.0.0:5000/search_user', params)
+    q = {'q': query}
+    req = requests.post('http://0.0.0.0:5000/search_user', params=q)
     try:
         if req.json() is not None:
             print('[{}] {}'.format(req().get('id'), req().get('name')))
