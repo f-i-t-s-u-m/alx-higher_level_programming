@@ -9,10 +9,13 @@ from sys import argv
 def main(query= ""):
     params = {'q': query}
     req = requests.post('http://httpbin.org/anythin/search_user', params)
-    if req.json is not None:
-        print('[{}] {}'.format(req.get('id'), req.get('name')))
-    else:
-        print('No result')
+    try:
+        if req.json() is not None:
+            print('[{}] {}'.format(req().get('id'), req().get('name')))
+        else:
+            print('No result')
+    except ValueError:
+        print('Not a valid JSON')
 
 
 if __name__ == '__main__':
