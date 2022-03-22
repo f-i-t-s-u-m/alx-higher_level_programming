@@ -10,7 +10,7 @@ def main(query= ""):
     q = {'q': query}
     req = requests.post('http://0.0.0.0:5000/search_user', params=q)
     try:
-        if req.json() is not None:
+        if not len(req.json()) == 0:
             print('[{}] {}'.format(req.json().get('id'), req.json().get('name')))
         else:
             print('No result')
