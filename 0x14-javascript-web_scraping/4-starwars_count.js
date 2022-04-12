@@ -9,14 +9,11 @@ req(argv[0], (error, response, body) => {
   }
 
   let i = 0;
-  let c = 0;
+  let c;
   while (JSON.parse(body).results[i]) {
     let n = 0;
     const ch = JSON.parse(body).results[i].characters;
-    while (ch[n]) {
-      if (ch[n] === 'https://swapi-api.hbtn.io/api/people/18/') {
-        c++;
-      }
+      let c ch.filter('https://swapi-api.hbtn.io/api/people/18/')
       n++;
     }
     i++;
