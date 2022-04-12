@@ -8,8 +8,8 @@ req(argv[0], (error, response, body) => {
     console.log(error);
   }
 
-    const ch = JSON.parse(body).results.filter(result => {
-	return result.characters.filter(data => data.includes('18')).length;
-    }).length;
-  console.log(ch)
+  const ch = JSON.parse(body).results.filter(result => {
+    return result.characters.filter(data => data.includes('18')).length;
+  }).length;
+  console.log(ch);
 });
