@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-''' python io file '''
+# 0-read_file.py
+"""Defines a text file-reading function."""
 
 
 def read_file(filename=""):
-    ''' python class to read file '''
-
-    with open(filename, "r", encoding="UTF-8") as f:
-        for line in f:
-            print(line, end="")
+    """Print the contents of a UTF8 text file to stdout."""
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end="")
